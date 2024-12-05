@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app-deployment
+  name: amazon-deployment
   labels:
-    app: web-app
+    app: amazon-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: web-app
+      app: amazon-app
   template:
     metadata:
       labels:
-        app: web-app
+        app: amazon-app
     spec:
       containers:
-      - name: web-app-container
-        image: zeeshanr/amazon:latest
+      - name: amazon-app-container
+        image: zeeshanr/amazon:v1
         ports:
         - containerPort: 80
